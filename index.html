@@ -1,105 +1,130 @@
+
 <!DOCTYPE HTML>
 <!--
-	Solid State by HTML5 UP | Modified for DevK Consulting
+    Solid State by HTML5 UP | Modified for DevK Consulting
     html5up.net | @ajlkn | License: CCA 3.0
 -->
 <html>
-	<head>
-		<title>DevK Consulting | Custom CRM Solutions</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="DevK Consulting helps startups and small businesses implement lightweight CRM & CXM systems tailored to their workflow.">
-		<meta property="og:title" content="DevK Consulting | Custom CRM Solutions">
-		<meta property="og:description" content="CRM & CXM solutions designed for your team — not templates.">
-		<meta property="og:image" content="https://www.devkconsulting.com/assets/social-preview.jpg">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<style>
-		#header h1 {
-		display: block !important;
-		color: #fff; /* or a color visible on dark backgrounds */
-		font-size: 1.2rem;
-		text-transform: uppercase;
-		}
-		
-		.image img {
-		object-fit: cover;
-		width: 100%;
-		height: 250px; /* Fixed height for uniformity */
-		border-radius: 8px; /* Slightly rounded, clean look */
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-		}
-	</style>
-	<body class="is-preload">
+<head>
+    <title>DevK Consulting | Custom CRM Solutions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="DevK Consulting helps startups and small businesses implement lightweight CRM & CXM systems tailored to their workflow.">
+    <meta property="og:title" content="DevK Consulting | Custom CRM Solutions">
+    <meta property="og:description" content="CRM & CXM solutions designed for your team — not templates.">
+    <meta property="og:image" content="https://www.devkconsulting.com/assets/social-preview.jpg">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>				  
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-				<header id="header">
-					<h1>DevK Consulting</h1>
-																			  
-					<nav><a href="#menu">Explore</a></nav>
-				</header>
+    <style>
+	#header h1 {
+        display: block !important;
+        color: #fff;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-																				 
-								<li><a href="#about">About Us</a></li>
-								<li><a href="#services">Services</a></li>
-								<li><a href="#packages">Packages</a></li>
-								<li><a href="#why">Why Choose Us</a></li>
-								<li><a href="#contact">Contact</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+    .image img {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        max-height: 350px;
+    }
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon solid fa-cogs"></span></div>
-							<h2>Custom CRM/CXM Systems for Growing Startups</h2>
-							<p>We build lightweight, workflow-friendly systems that help you close deals faster and support customers better — without the tech overwhelm.</p>
-							<ul class="actions special">
-								<li><a href="#contact" class="button primary">Schedule Free Consultation</a></li>
-							</ul>
-						</div>
-					</section>
+    @media (max-width: 768px) {
+        .inner {
+            padding: 40px 20px;
+        }
+        .actions .button,
+        .fields input,
+        .fields textarea {
+            min-height: 44px;
+        }
+        .image img {
+            aspect-ratio: 16 / 9;
+            max-height: none;
+        }
+    }
 
-	 
-		<!-- About Us -->
+    .testimonial {
+        background: #f9f9f9;
+        padding: 40px 30px;
+        border-radius: 8px;
+        font-style: italic;
+        text-align: center;
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 30px auto;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="page-wrapper">
+        <header id="header">
+            <h1>DevK Consulting</h1>
+            <nav><a href="#menu">Explore</a></nav>
+        </header>
+
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#why">Why Choose Us</a></li>
+                    <li><a href="#testimonial">Testimonial</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <section id="banner">
+            <div class="inner">
+                <div class="logo"><span class="icon solid fa-cogs"></span></div>
+                <h2>Custom CRM/CXM Systems for Growing Startups</h2>
+                <p>We build lightweight, workflow-friendly systems that help you close deals faster and support customers better — without the tech overwhelm.</p>
+                <ul class="actions special">
+                    <li><a href="#contact" class="button primary">Schedule Free Consultation</a></li>
+                </ul>
+            </div>
+        </section>
+
         <section id="about" class="wrapper spotlight style1">
             <div class="inner">
                 <a href="#" class="image"><img src="images/about.webp" alt="Startup team collaborating"></a>
                 <div class="content">
                     <h2 class="major">About Us</h2>
                     <p>DevK Consulting helps startups and small businesses build custom CRM/CXM systems that are easy to use and actually adopted by your team. With over 7 years of experience, we ensure smooth workflows and smart automation that drive results.</p>
-				</div>
+                </div>
             </div>
         </section>
 
-        <!-- Services -->
+						 
         <section id="services" class="wrapper alt spotlight style2">
             <div class="inner">
                 <a href="#" class="image"><img src="images/services.webp" alt="Services offered"></a>
                 <div class="content">
                     <h2 class="major">Our Services</h2>
                     <div class="features">
-						<div><strong>🛠️ CRM Setup:</strong> Tailored configuration based on your process.</div>
-						<div><strong>🧩 Workflow Automation:</strong> Automate repetitive tasks and triggers.</div>
-						<div><strong>📊 User Training:</strong> Help your team adopt the new system easily.</div>
-						<div><strong>🔌 App Integrations:</strong> Email, WhatsApp, web forms and more.</div>
-						<div><strong>🛟 Post-launch Support:</strong> We stay with you after go-live.</div>
-					</div>
+                        <div><strong>🛠️ CRM Setup:</strong> Tailored configuration based on your process.</div>
+                        <div><strong>🧩 Workflow Automation:</strong> Automate repetitive tasks and triggers.</div>
+                        <div><strong>📊 User Training:</strong> Help your team adopt the new system easily.</div>
+                        <div><strong>🔌 App Integrations:</strong> Email, WhatsApp, web forms and more.</div>
+                        <div><strong>🛟 Post-launch Support:</strong> We stay with you after go-live.</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Packages -->
+						 
         <section id="packages" class="wrapper spotlight style3">
             <div class="inner">
                 <a href="#" class="image"><img src="images/packages.webp" alt="Packages"></a>
@@ -115,9 +140,9 @@
             </div>
         </section>
 
-        <!-- Why Choose Us -->
+							  
         <section id="why" class="wrapper alt style1">
-            <div class="inner">	  
+            <div class="inner">
                 <h2 class="major">Why Choose DevK Consulting?</h2>
                 <p>We don’t believe in bloated software or tools your team won’t use. We deliver lightweight, fast systems built to match your exact processes. With personalized support and fast turnarounds, our focus is your growth and simplicity.</p>
                 <ul class="features">
@@ -129,11 +154,28 @@
             </div>
         </section>
 
-        <!-- Contact -->
+        <section id="testimonial" class="wrapper style2">
+            <div class="inner">
+                <h2 class="major">What Our Clients Say</h2>
+				<p style="text-align:center; font-size: 1rem; color: #666;">
+				Real stories from teams who ditched spreadsheet chaos and got back to work.
+				</p>
+				<div class="testimonial">
+					“DevK Consulting helped us replace scattered tools with one smooth CRM system. Their custom setup saved hours and boosted our team’s consistency.”<br><br>
+					— Product Lead, US-based SaaS Startup
+				</div>
+
+				<div class="testimonial">
+					“From day one, DevK got our use case and gave us exactly what we needed — not a bloated tool, but something simple and powerful.”<br><br>
+					— Founder, HealthTech Startup
+				</div>
+            </div>
+        </section>
+
         <section id="contact" class="wrapper style2">
             <div class="inner">
-																							  
-		 
+																				  
+   
                 <h2 class="major">Let’s Talk</h2>
                 <p>Have a project in mind? Send us a message and we’ll get back within 24 hours.</p>
                 <form method="post" action="#">
@@ -161,24 +203,22 @@
             </div>
         </section>
 
-        <!-- Footer -->
+					   
         <section id="footer">
             <div class="inner">
                 <ul class="copyright">
                     <li>&copy; 2025 DevK Consulting. All rights reserved.</li>
-                    <li>Design: <a href="http://html5up.net">HTML5 UP</a> | Customized by DevK </li>
-				</ul>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a> | Customized by DevK</li>
+                </ul>
             </div>
         </section>
-			</div>
+    </div>				  
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js" defer></script>
-			<script src="assets/js/jquery.scrollex.min.js" defer></script>
-			<script src="assets/js/browser.min.js" defer></script>
-			<script src="assets/js/breakpoints.min.js" defer></script>
-			<script src="assets/js/util.js" defer></script>
-			<script src="assets/js/main.js" defer></script>
-
-	</body>
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/jquery.scrollex.min.js" defer></script>
+    <script src="assets/js/browser.min.js" defer></script>
+    <script src="assets/js/breakpoints.min.js" defer></script>
+    <script src="assets/js/util.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
 </html>
