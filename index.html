@@ -24,15 +24,19 @@
         font-size: 1.2rem;
         text-transform: uppercase;
     }
-
-    .image img {
-        object-fit: cover;
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        max-height: 350px;
-    }
+	
+	.image img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+		object-fit: cover;
+		aspect-ratio: 3 / 2; /* Balanced aspect ratio */
+		max-height: 360px;
+		display: block;
+		margin: 0 auto;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+	}
 
     @media (max-width: 768px) {
         .inner {
@@ -48,6 +52,13 @@
             max-height: none;
         }
     }
+	
+	@media (max-width: 768px) {
+    .image img {
+        aspect-ratio: 16 / 9;
+        max-height: none;
+    }
+}
 
     .testimonial {
         background: #f9f9f9;
@@ -157,7 +168,7 @@
         <section id="testimonial" class="wrapper style2">
             <div class="inner">
                 <h2 class="major">What Our Clients Say</h2>
-				<p style="text-align:center; font-size: 1rem; color: #666;">
+				<p style="text-align:center; font-size: 1rem; color: #fff;">
 				Real stories from teams who ditched spreadsheet chaos and got back to work.
 				</p>
 				<div class="testimonial">
