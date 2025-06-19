@@ -189,31 +189,39 @@
    
                 <h2 class="major">Let’s Talk</h2>
                 <p>Have a project in mind? Send us a message and we’ll get back within 24 hours.</p>
-                <form method="post" action="#">
-                    <div class="fields">
-                        <div class="field">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" />
-                        </div>
-                        <div class="field">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" />
-                        </div>
-                        <div class="field">
-                            <label for="message">Message</label>
-                            <textarea name="message" id="message" rows="4"></textarea>
-                        </div>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="primary" /></li>
-                    </ul>
-                </form>
+				<form method="POST" action="https://formspree.io/f/xwpbnkqe">
+				  <div class="fields">
+					<div class="field">
+					  <label for="name">Name</label>
+					  <input type="text" name="name" id="name" required />
+					</div>
+					<div class="field">
+					  <label for="email">Email</label>
+					  <input type="email" name="email" id="email" required />
+					</div>
+					<div class="field">
+					  <label for="message">Message</label>
+					  <textarea name="message" id="message" rows="4" required></textarea>
+					</div>
+				  </div>
+				  <ul class="actions">
+					<li><input type="submit" value="Send Message" class="primary" /></li>
+				  </ul>
+				  
+					<!-- Honeypot to catch bots -->
+					<div style="display: none;">
+					  <label>Don’t fill this out if you're human: <input type="text" name="_gotcha"></label>
+					</div>
+					
+					<input type="hidden" name="_redirect" value="https://www.devkconsulting.com/#contact" />
+
+				</form>
+
                 <ul class="contact">
                     <li class="icon solid fa-envelope"><a href="mailto:dev@devkconsulting.com">dev@devkconsulting.com</a></li>
                 </ul>
             </div>
         </section>
-
 					   
         <section id="footer">
             <div class="inner">
