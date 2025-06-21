@@ -18,97 +18,61 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>				  
 
 <style>
-	/* ✅ Remove overriding background from all wrappers */
-	.wrapper {
-	  transition: background-color 0.4s ease-in-out;
-	}
-
-	/* ✅ Smooth transition between alternating dark/light sections */
-	.wrapper.style1 {
-	  background-color: #2e3842; /* dark */
-	  color: #fff;
-	}
-
-	.wrapper.style2 {
-	  background-color: #f7f7f7; /* light */
-	  color: #111;
-	}
-
-	.wrapper.style3 {
-	  background-color: #ffffff; /* white section */
-	  color: #111;
-	}
-
-	/* ✅ Consistent text colors inside light sections */
-	.wrapper.style2 h2,
-	.wrapper.style2 h3,
-	.wrapper.style2 p,
-	.wrapper.style2 li,
-	.wrapper.style3 h2,
-	.wrapper.style3 h3,
-	.wrapper.style3 p,
-	.wrapper.style3 li {
-	  color: #111 !important;
-	}
-
-	/* ✅ Fix image style */
-	.image img {
-	  width: 100%;
-	  max-width: 100%;
-	  height: auto;
-	  border-radius: 10px;
-	  object-fit: cover;
-	  aspect-ratio: 1 / 1;
-	  max-height: 360px;
-	  display: block;
-	  margin: 0 auto;
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
-	}
-
-	/* ✅ Mobile Fixes */
-	@media (max-width: 768px) {
-	  .inner {
-		padding: 40px 20px;
-	  }
-	  .actions .button,
-	  .fields input,
-	  .fields textarea {
-		min-height: 44px;
-	  }
-	  .image img {
-		aspect-ratio: 1 / 1;
-		max-height: none;
-	  }
-	}
-
-	/* ✅ Testimonial Box */
-	.testimonial {
-	  background: #fff;
-	  padding: 40px 30px;
-	  border-radius: 8px;
-	  font-style: italic;
-	  text-align: center;
-	  color: #333;
-	  font-size: 1.1rem;
-	  line-height: 1.6;
-	  max-width: 700px;
-	  margin: 30px auto;
-	  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-	}
-
-	/* ✅ Fix body & header text */
-	body {
-	  font-size: 16px;
-	  line-height: 1.6;
-	  color: #ffffff;
-	}
-
 	#header h1 {
-	  display: block !important;
-	  color: #fff;
-	  font-size: 1.2rem;
-	  text-transform: uppercase;
+        display: block !important;
+        color: #fff;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+	
+	.image img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		border-radius: 10px;
+		object-fit: cover;
+		aspect-ratio: 1 / 1; /* Balanced aspect ratio */
+		max-height: 360px;
+		display: block;
+		margin: 0 auto;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
 	}
+
+    @media (max-width: 768px) {
+        .inner {
+            padding: 40px 20px;
+        }
+        .actions .button,
+        .fields input,
+        .fields textarea {
+            min-height: 44px;
+        }
+        .image img {
+            aspect-ratio: 1 / 1;
+            max-height: none;
+        }
+    }
+	
+	@media (max-width: 768px) {
+    .image img {
+        aspect-ratio: 1 / 1;
+        max-height: none;
+    }
+}
+
+    .testimonial {
+        background: #f9f9f9;
+        padding: 40px 30px;
+        border-radius: 8px;
+        font-style: italic;
+        text-align: center;
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 700px;
+        margin: 30px auto;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
 </style>
 </head>
 <body class="is-preload">
@@ -207,7 +171,7 @@
             <div class="inner">
                 <h2 class="major">🗣 Client Testimonials</h2>
 				<!-- <p style="text-align:center; font-size: 1rem; color: #fff;"> -->
-				<p style="text-align:center; font-size: 1rem; color: #111;">
+				<p style="text-align:center; font-size: 1rem; color: #fff;">
 				Real stories from teams who ditched spreadsheet chaos and got back to work.
 				</p>
 				<div class="testimonial">
