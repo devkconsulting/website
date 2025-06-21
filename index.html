@@ -17,63 +17,99 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>				  
 
-    <style>
-	#header h1 {
-        display: block !important;
-        color: #fff;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-    }
-	
-	.image img {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		border-radius: 10px;
-		object-fit: cover;
-		aspect-ratio: 3 / 2; /* Balanced aspect ratio */
-		max-height: 360px;
-		display: block;
-		margin: 0 auto;
-		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+<style>
+	/* ✅ Remove overriding background from all wrappers */
+	.wrapper {
+	  transition: background-color 0.4s ease-in-out;
 	}
 
-    @media (max-width: 768px) {
-        .inner {
-            padding: 40px 20px;
-        }
-        .actions .button,
-        .fields input,
-        .fields textarea {
-            min-height: 44px;
-        }
-        .image img {
-            aspect-ratio: 16 / 9;
-            max-height: none;
-        }
-    }
-	
-	@media (max-width: 768px) {
-    .image img {
-        aspect-ratio: 16 / 9;
-        max-height: none;
-    }
-}
+	/* ✅ Smooth transition between alternating dark/light sections */
+	.wrapper.style1 {
+	  background-color: #2e3842; /* dark */
+	  color: #fff;
+	}
 
-    .testimonial {
-        background: #f9f9f9;
-        padding: 40px 30px;
-        border-radius: 8px;
-        font-style: italic;
-        text-align: center;
-        color: #333;
-        font-size: 1.1rem;
-        line-height: 1.6;
-        max-width: 700px;
-        margin: 30px auto;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    }
-    </style>
+	.wrapper.style2 {
+	  background-color: #f7f7f7; /* light */
+	  color: #111;
+	}
+
+	.wrapper.style3 {
+	  background-color: #ffffff; /* white section */
+	  color: #111;
+	}
+
+	/* ✅ Consistent text colors inside light sections */
+	.wrapper.style2 h2,
+	.wrapper.style2 h3,
+	.wrapper.style2 p,
+	.wrapper.style2 li,
+	.wrapper.style3 h2,
+	.wrapper.style3 h3,
+	.wrapper.style3 p,
+	.wrapper.style3 li {
+	  color: #111 !important;
+	}
+
+	/* ✅ Fix image style */
+	.image img {
+	  width: 100%;
+	  max-width: 100%;
+	  height: auto;
+	  border-radius: 10px;
+	  object-fit: cover;
+	  aspect-ratio: 1 / 1;
+	  max-height: 360px;
+	  display: block;
+	  margin: 0 auto;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+	}
+
+	/* ✅ Mobile Fixes */
+	@media (max-width: 768px) {
+	  .inner {
+		padding: 40px 20px;
+	  }
+	  .actions .button,
+	  .fields input,
+	  .fields textarea {
+		min-height: 44px;
+	  }
+	  .image img {
+		aspect-ratio: 1 / 1;
+		max-height: none;
+	  }
+	}
+
+	/* ✅ Testimonial Box */
+	.testimonial {
+	  background: #fff;
+	  padding: 40px 30px;
+	  border-radius: 8px;
+	  font-style: italic;
+	  text-align: center;
+	  color: #333;
+	  font-size: 1.1rem;
+	  line-height: 1.6;
+	  max-width: 700px;
+	  margin: 30px auto;
+	  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+	}
+
+	/* ✅ Fix body & header text */
+	body {
+	  font-size: 16px;
+	  line-height: 1.6;
+	  color: #ffffff;
+	}
+
+	#header h1 {
+	  display: block !important;
+	  color: #fff;
+	  font-size: 1.2rem;
+	  text-transform: uppercase;
+	}
+</style>
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
@@ -86,12 +122,13 @@
             <div class="inner">
                 <h2>Menu</h2>
                 <ul class="links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#packages">Packages</a></li>
-                    <li><a href="#why">Why Choose Us</a></li>
-                    <li><a href="#testimonial">Testimonial</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">✅ About DevK Consulting</a></li>
+                    <li><a href="#services">🚀 What We Can Build For You</a></li>
+                    <li><a href="#packages">💼 Plans & Pricing</a></li>
+                    <li><a href="#why">⭐ Why Teams Choose Us</a></li>
+                    <li><a href="#testimonial">🗣 Client Testimonials</a></li>
+                    <li><a href="#contact">🤝 Start Your CRM Journey</a></li>
+					<li><a href="startup-crm-mistakes.html">CRM Mistakes Guide</a></li>
                 </ul>
                 <a href="#" class="close">Close</a>
             </div>
@@ -101,10 +138,11 @@
             <div class="inner">
                 <div class="logo"><span class="icon solid fa-cogs"></span></div>
                 <h2>Custom CRM/CXM Systems for Growing Startups</h2>
-                <p>We build lightweight, workflow-friendly systems that help you close deals faster and support customers better — without the tech overwhelm.</p>
+                <p>We design systems that match your workflows — to track leads, support customers, and automate your operations without tech overwhelm.</p>
                 <ul class="actions special">
-                    <li><a href="https://calendly.com/devkconsulting/15min" target="_blank" rel="noopener noreferrer" class="button primary">Schedule Free Consultation</a></li>
+                    <li><a href="https://calendly.com/devkconsulting/15min" target="_blank" rel="noopener noreferrer" class="button primary">🚀 Book Your Free CRM Assessment</a></li>
                 </ul>
+				<p><em>Not ready to book? <a href="startup-crm-mistakes.html">Read our 2-minute guide instead</a>.</em></p>
             </div>
         </section>
 
@@ -112,7 +150,7 @@
             <div class="inner">
                 <a href="#" class="image"><img src="images/about.webp" alt="Startup team collaborating"></a>
                 <div class="content">
-                    <h2 class="major">About Us</h2>
+                    <h2 class="major">✅ About DevK Consulting</h2>
                     <p>DevK Consulting helps startups and small businesses build custom CRM/CXM systems that are easy to use and actually adopted by your team. With over 7 years of experience, we ensure smooth workflows and smart automation that drive results.</p>
                 </div>
             </div>
@@ -123,7 +161,7 @@
             <div class="inner">
                 <a href="#" class="image"><img src="images/services.webp" alt="Services offered"></a>
                 <div class="content">
-                    <h2 class="major">Our Services</h2>
+                    <h2 class="major">🚀 What We Can Build For You</h2>
                     <div class="features">
                         <div><strong>🛠️ CRM Setup:</strong> Tailored configuration based on your process.</div>
                         <div><strong>🧩 Workflow Automation:</strong> Automate repetitive tasks and triggers.</div>
@@ -140,7 +178,7 @@
             <div class="inner">
                 <a href="#" class="image"><img src="images/packages.webp" alt="Packages"></a>
                 <div class="content">
-                    <h2 class="major">Packages</h2>
+                    <h2 class="major">💼 Plans & Pricing</h2>
                     <p>Whether you're just starting or scaling fast — we have a package for you:</p>
                     <ul>
                         <li><strong>Starter:</strong> Setup + Training — <s>$200</s> $149 USD (one-time)</li>
@@ -154,7 +192,7 @@
 							  
         <section id="why" class="wrapper alt style1">
             <div class="inner">
-                <h2 class="major">Why Choose DevK Consulting?</h2>
+                <h2 class="major">⭐ Why Teams Choose Us</h2>
                 <p>We don’t believe in bloated software or tools your team won’t use. We deliver lightweight, fast systems built to match your exact processes. With personalized support and fast turnarounds, our focus is your growth and simplicity.</p>
                 <ul class="features">
                     <li><strong>✅ Fast turnaround</strong></li>
@@ -167,8 +205,9 @@
 
         <section id="testimonial" class="wrapper style2">
             <div class="inner">
-                <h2 class="major">What Our Clients Say</h2>
-				<p style="text-align:center; font-size: 1rem; color: #fff;">
+                <h2 class="major">🗣 Client Testimonials</h2>
+				<!-- <p style="text-align:center; font-size: 1rem; color: #fff;"> -->
+				<p style="text-align:center; font-size: 1rem; color: #111;">
 				Real stories from teams who ditched spreadsheet chaos and got back to work.
 				</p>
 				<div class="testimonial">
@@ -187,9 +226,9 @@
             <div class="inner">
 																				  
    
-                <h2 class="major">Let’s Talk</h2>
+                <h2 class="major">🤝 Start Your CRM Journey</h2>
                 <p>Have a project in mind? Send us a message and we’ll get back within 24 hours.</p>
-				<form method="POST" action="https://formspree.io/f/xwpbnkqe">
+				<form action="https://formspree.io/f/xwpbnkqe" method="POST" onsubmit="location.href='thankyou.html'; return false;">
 				  <div class="fields">
 					<div class="field">
 					  <label for="name">Name</label>
@@ -228,6 +267,7 @@
                 <ul class="copyright">
                     <li>&copy; 2025 DevK Consulting. All rights reserved.</li>
                     <li>Design: <a href="http://html5up.net">HTML5 UP</a> | Customized by DevK</li>
+					<li><a href="startup-crm-mistakes.html">📘 Read: CRM Mistakes Guide</a></li>
                 </ul>
             </div>
         </section>
