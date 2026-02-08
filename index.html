@@ -96,6 +96,137 @@
         margin: 30px auto;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
+	
+	  .funnel-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 2em;
+  }
+  .funnel-step {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+  .funnel-step h3 {
+    margin-top: 12px;
+    font-size: 1.15em;
+  }
+  .funnel-step p {
+    margin-top: 8px;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #555;
+  }
+  .step-icon {
+    font-size: 2em;
+  }
+
+  /* Optional arrows between cards (desktop only) */
+  @media (min-width: 768px) {
+    .funnel-steps {
+      grid-template-columns: 1fr 1fr 1fr; /* adjust to 2-3 columns as needed */
+    }
+  }
+  
+  
+  .faq-list {
+  max-height: 500px;        /* your desired height */
+  overflow-y: auto;         /* enable vertical scrolling */
+  padding-right: 0.5rem;    /* prevent content touching scrollbar */
+}
+
+/* Chrome, Edge, Safari */
+.faq-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.faq-list::-webkit-scrollbar-track {
+  background: transparent;  /* invisible track */
+}
+
+.faq-list::-webkit-scrollbar-thumb {
+  background-color: #007bff;  /* subtle brand color */
+  border-radius: 4px;
+}
+
+.faq-list::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;  /* slightly darker on hover */
+}
+
+/* Firefox */
+.faq-list {
+  scrollbar-width: thin;
+  scrollbar-color: #007bff transparent;
+}
+  
+/* FAQ section styles with smooth rotating arrows */
+#faq .faq-list details {
+  margin-bottom: 1.5em;
+  border-left: 3px solid #4f46e5; /* accent color */
+  padding-left: 14px;
+  cursor: pointer;
+}
+
+#faq .faq-list summary {
+  font-weight: 600;
+  font-size: 1.05em;
+  margin-bottom: 4px;
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  transition: color 0.3s ease;
+}
+
+/* Arrow container */
+#faq .faq-list summary::before {
+  content: "►";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1em;
+  transition: transform 0.4s ease, color 0.3s ease;
+  color: #4f46e5;
+  transform-origin: center;
+}
+
+/* Rotate arrow when open */
+details[open] summary::before {
+  transform: rotate(90deg);
+  color: #1e40af;
+}
+
+/* Hover effect */
+#faq .faq-list summary:hover {
+  color: #1e40af;
+}
+
+/* Smooth slide-down content */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+details[open] .faq-content {
+  max-height: 500px; /* adjust if content is longer */
+  padding-top: 8px;
+}
+
+.faq-content p {
+  font-size: 0.95em;
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Open summary text color */
+details[open] summary {
+  color: #1e40af;
+}
+
 </style>
 </head>
 <body class="is-preload">
@@ -109,13 +240,16 @@
 		  <div class="inner">
 			<h2>Menu</h2>
 			<ul class="links">
-			  <li><a href="#about">🧠 About DevK Consulting</a></li>
-			  <li><a href="#how">🛠️ How We Help You Succeed</a></li>
-			  <li><a href="#packages">💰 Simple, One-Time Pricing</a></li>
-			  <li><a href="#why-us">⭐ Why Teams Choose Us</a></li>
-			  <li><a href="#testimonial">🗣 What Our Clients Say</a></li>
-			  <li><a href="#contact">🤝 Contact Us</a></li>
-			  <li><a href="startup-crm-mistakes.html" target="_blank">⚠️ CRM Mistakes to Avoid</a></li>
+			  <li><a href="#about">🧠 About Us</a></li>
+			  <li><a href="#how">🛠 How We Help</a></li>
+			  <li><a href="#crmhealthcheckup">🩺 Health Check</a></li>
+			  <li><a href="#how-we-work">🛠 Implementation Approach</a></li>
+			  <li><a href="#packages">💰 Pricing</a></li>
+			  <li><a href="#why-us">⭐ Why Us</a></li>
+			  <li><a href="#faq">❓ FAQ</a></li>
+			  <li><a href="#testimonial">🗣 Testimonials</a></li>
+			  <li><a href="#contact">🤝 Contact</a></li>
+			  <li><a href="startup-crm-mistakes.html" target="_blank">⚠️ CRM Mistakes</a></li>
 			</ul>
 			<a href="#" class="close">Close</a>
 		  </div>
@@ -125,17 +259,14 @@
             <div class="inner">
                 <div class="logo"><span class="icon solid fa-cogs"></span></div>
                 <h2>Fix Your Messy CRM & Get Your Team Actually Using It — Fast</h2>
-                <p>We build systems that fit your workflows — track leads, support customers, and automate operations without the tech headache</p>
+                <p>We design and implement CRMs that fit your workflows — with clear feasibility, clean setup, and post-launch support so adoption actually sticks</p>
                 <ul class="actions special">
-                    <li><a href="https://calendly.com/devkconsulting/15min" target="_blank" rel="noopener noreferrer" class="button primary">🚀 Book Free CRM Assessment</a></li>
+                    <li><a href="https://calendly.com/devkconsulting/15min" target="_blank" rel="noopener noreferrer" class="button primary">🚀 Book Free Discovery Call</a></li>
                 </ul>
-				<p><em>Not ready to book? <a href="startup-crm-mistakes.html">Read our 2-minute guide instead</a></em></p>
+				<p><em>Not ready to book? <a href="startup-crm-mistakes.html">Read our 2-minute CRM mistakes guide →</a></em></p>
             </div>
         </section>
 		
-		
-
-
 		<section id="about" class="wrapper style3">
 		  <div class="inner">
 			<h2>🧠 About DevK Consulting</h2>
@@ -182,38 +313,147 @@
 				<h4 style="margin-top: 10px;">Get Support That Sticks</h4>
 				<p>We don’t just set it up and vanish — real help, post-launch</p>
 			  </div>
+			  
+			  <div class="box" style="text-align: left;">
+				<span class="icon solid fa-robot" style="font-size: 28px; color: #007bff;"></span>
+				<h4 style="margin-top: 10px;">CRM AI Enablement</h4>
+				<p>Help your team unlock built-in CRM AI features for practical automation and insights</p>
+			  </div>
 
 			</div>
 		  </div>
 		</section>
+		
+		<section id="crmhealthcheckup" class="wrapper style2">
+		  <div class="inner">
+			<header class="major">
+			  <h2>🩺 CRM Health Check & Feasibility Review</h2>
+			  <p>Not sure what’s broken, what’s feasible, or how much effort your CRM actually needs?<br>
+			  We start by understanding your setup — so implementation is smooth, scoped, and predictable. 
+			  If needed, we’ll suggest a CRM Health Check to finalize the scope before implementation</p>
+			</header>
+
+			<ul style="list-style: none;">
+			  <li>✅ Review of current CRM setup, data & workflows</li>
+			  <li>✅ Feasibility check for requested changes (what’s possible vs risky)</li>
+			  <li>✅ Adoption gaps & quick-win improvements</li>
+			  <li>✅ Clear scope outline for implementation</li>
+			</ul>
+
+			<p class="outcome">You’ll walk away with a clear action plan — even if you don’t proceed with implementation</p>
+
+			<div class="align-container">
+			  <a href="https://calendly.com/devkconsulting/15min" target="_blank" class="button primary">🩺 Book a Consultation</a>
+			  <span style="font-size:12px;">Optional: CRM Health Check $250 one-time · Pricing in USD. Taxes (if applicable) billed separately</span>
+			</div>
+		  </div>
+		</section>
+		
+		
+		<section id="how-we-work" class="wrapper style2">
+			<div class="inner">
+				<!-- Section Header -->
+				<header class="major">
+					<h2>🛠 How We Work: Our Implementation Approach</h2>
+					<p>From discovery to post-launch support — structured steps for CRMs that actually get used</p>
+				</header>
+
+			<!-- Funnel / Steps -->
+			<div class="funnel-steps">
+				<!-- Step 1 -->
+				<div class="funnel-step">
+				<div class="step-icon">1️⃣</div>
+				<h3 style="color: #000000;">Discovery & Context</h3>
+				<p>We understand your workflows, team needs, and CRM challenges before touching any system</p>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="funnel-step">
+				<div class="step-icon">🩺</div>
+				<h3 style="color: #000000;">Health Check (Optional)</h3>
+				<p>Review current CRM setup, assess gaps, and prioritise improvements — your foundation for smooth implementation</p>
+				</div>
+
+				<!-- Step 3 -->
+				<div class="funnel-step">
+				<div class="step-icon">3️⃣</div>
+				<h3 style="color: #000000;">Scoped Kickoff & Feasibility</h3>
+				<p>Define clear scope, timelines, and feasibility of workflows, automations, and integrations</p>
+				</div>
+
+				<!-- Step 4 -->
+				<div class="funnel-step">
+				<div class="step-icon">⚙️</div>
+				<h3 style="color: #000000;">Implementation</h3>
+				<p>Set up pipelines, workflows, automations, dashboards, and integrate tools according to the scoped plan</p>
+				</div>
+				
+				<!-- Step 5 -->
+				<div class="funnel-step">
+					<div class="step-icon">🎓</div>
+					<h3 style="color: #000000;">UAT & Training</h3>
+					<p>Validate workflows, automations, and dashboards (UAT) while providing hands-on training to ensure smooth adoption and confidence</p>
+				</div>
+				<!-- Step 6 -->
+				<div class="funnel-step">
+				<div class="step-icon">🚀</div>
+				<h3 style="color: #000000;">Go-Live & Support</h3>
+				<p>Monitor adoption, fix issues, and ensure smooth handoffs. Ongoing tweaks and guidance make sure your CRM evolves with your team’s workflow</p>
+				</div>
+			</div>
+
+			<!-- CTA -->
+			<div class="funnel-cta" style="text-align:center; margin-top:2em;">
+			  <p><strong>Structured. Predictable. Adoption-focused.</strong> Your team gets a CRM that actually works — every step backed by a clear plan</p>
+			  <a href="#packages" class="button primary">📄 See Implementation Options</a>
+			</div>
+		  </div>
+		</section>
+
 
 		<section id="packages" class="wrapper style3">
 			  <div class="inner">
 				<h2>💰 Simple, One-Time Pricing — No Monthly Lock-ins</h2>
-				<p>Pick what suits your stage. Upgrade anytime as your business grows</p>
-
+				<p style="margin: 0 0 1em 0;">Pick what suits your stage. Upgrade anytime as your business grows
+				<p class="note">💡 Most teams start with a CRM Health Check to finalise scope before choosing Growth or Custom</p>
 				<div class="box-container" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; text-align: left;">
-				  <!-- Starter -->
-				  <div class="box" style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-					<h3 style="color: #000000;">🌱 Starter — $149</h3>
-					<p style="color: #000000;">CRM setup + a 1:1 walkthrough for your team <br><strong style="color: #000000;">Track leads and follow-ups effortlessly</strong></p>
-				  </div>
-
 				  <!-- Growth -->
 				  <div class="box" style="flex: 1 1 280px; background: #f7faff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 2px solid #007bff;">
-					<h3 style="color: #000000;">🚀 Growth — $249</h3>
-					<p style="color: #000000;">Everything in Starter, plus automations and ongoing support <br><strong style="color: #000000;">Never miss a deal or follow-up</strong></p>
+					<h3 style="color: #000000;">🚀 Growth — $400</h3>
+					<p style="color: #000000;margin: 0 0 0.5em 0;"><strong style="color: #000000;">Best for small teams that want a CRM that actually works</strong>
+					<br>Includes
+						<ul style="color: #000000;list-style: none;">
+						  <li>✅ CRM configuration & optimisation</li>
+						  <li>✅ Core workflows and automations</li>
+						  <li>✅ Pipeline or case setup</li>
+						  <li>✅ Role-based training</li>
+						  <li>✅ Go-live & hypercare</li>
+						  <li>✅ 2-week post-launch adaptation support</li>
+						</ul>
+					</p>
+					<p style="color: #000000;font-size:12px;font-style: italic;">Scope is finalised before implementation to ensure clarity and fairness</p>
 				  </div>
 
 				  <!-- Scale -->
-				  <div class="box" style="flex: 1 1 280px; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-					<h3 style="color: #000000;">🏗️ Scale — from $499</h3>
-					<p style="color: #000000;">End-to-end setup with advanced integrations and reporting <br><strong style="color: #000000;">Get instant visibility into your team’s performance</strong></p>
+				  <div class="box" style="flex: 1 1 280px; background: #f7faff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 2px solid #007bff;">
+					<h3 style="color: #000000;">🏗️ Custom — from $600</h3>
+					<p style="color: #000000;margin: 0 0 0.5em 0;"><strong style="color: #000000;">For complex workflows, integrations, or multi-team setups</strong>
+					<br>Includes
+						<ul style="color: #000000;list-style: none;">
+						  <li>✅ Everything in Growth</li>
+						  <li>✅ Advanced automations</li>
+						  <li>✅ Third-party integrations</li>
+						  <li>✅ Custom dashboards & reports</li>
+						  <li>✅ Phased rollout (if required)</li>
+						</ul>
+					</p>
+					<br>
+					<p style="color: #000000;font-size:12px;font-style: italic;">Final pricing depends on scope, complexity, and effort</p>
 				  </div>
 				</div>
-				
-				<p style="font-weight: 300; color: #ffffff;">🛠️ Tailored Setup Available — Book a call, and we’ll recommend the best fit for your goals</p>
+				<p style="font-size:12px;;Margin-top: small;">Pricing listed in USD. Taxes (if applicable) billed separately</p>
 
+				<p style="font-weight: 300; color: #ffffff;">Not sure which plan fits? Book a free 15-minute call and we’ll recommend the right setup.</p>
 				<footer class="major" style="margin-top: 2rem;">
 				  <ul class="actions special">
 					<li><a href="https://calendly.com/devkconsulting/15min" class="button primary"  target="_blank" rel="noopener">📅 Book a Free 15‑min Call</a></li>
@@ -265,6 +505,63 @@
 				<p style="color: #000000;">Quick guides, training, and support to make sure your team actually uses the system</p>
 			  </div>
 
+			</div>
+		  </div>
+		</section>
+		
+		<section id="faq" class="wrapper style3">
+		  <div class="inner">
+			<header class="major">
+			  <h2>❓ Frequently Asked Questions</h2>
+			  <p>Answers to common questions so you know what to expect before working with us</p>
+			</header>
+
+			<!-- <div class="faq-list"> -->
+			<div class="faq-list" style="max-height: 300px; overflow-y: auto; padding-right: 1rem;">
+			  <details>
+				<summary>What happens after I book a call?</summary>
+				<p>We review your current CRM, discuss your goals, and outline next steps — including whether a Health Check or implementation plan makes sense</p>
+			  </details>
+
+			  <details>
+				<summary>How is scope determined?</summary>
+				<p>Scope is always defined upfront using the Health Check results, ensuring clarity and predictable pricing</p>
+			  </details>
+
+			  <details>
+				<summary>What if my requirements change after kickoff?</summary>
+				<p>We evaluate changes case-by-case. Minor adjustments are included; larger changes are scoped and quoted separately</p>
+			  </details>
+
+			  <details>
+				<summary>What’s included in post-launch support?</summary>
+				<p>2-week adaptation support (Growth) or phased support (Custom), plus optional ongoing consulting</p>
+			  </details>
+
+			  <details>
+				<summary>Can I do this without a Health Check?</summary>
+				<p>Yes, but we recommend it for clear scope, smooth implementation, and predictable pricing</p>
+			  </details>
+			  
+			  <details>
+				<summary>Can pricing change after kickoff?</summary>
+				<p>Pricing is based on agreed scope. If new requirements emerge, we discuss impact transparently before proceeding</p>
+			  </details>
+			  
+			   <details>
+				<summary>Do you work hourly or fixed price?</summary>
+				<p>Engagements are scope-based to keep outcomes predictable. Hourly support is available for advisory needs</p>
+			  </details>
+
+			  <details>
+				<summary>What if we don’t buy the Health Check?</summary>
+				<p>We’ll scope based on your stated requirements and jointly prioritize them before implementation</p>
+			  </details>
+
+			  <details>
+				<summary>Do you support specific CRM tools?</summary>
+				<p>We work with leading CRM platforms and remain vendor-agnostic to recommend the best fit</p>
+			  </details>
 			</div>
 		  </div>
 		</section>
@@ -321,7 +618,7 @@
         <section id="footer">
             <div class="inner">
                 <ul class="copyright">
-                    <li>&copy; 2025 DevK Consulting. All rights reserved.</li>
+                    <li>&copy; 2026 DevK Consulting. All rights reserved.</li>
                     <li>Design: <a href="http://html5up.net">HTML5 UP</a> | Customized by DevK</li>
 					<li><a href="startup-crm-mistakes.html">📘 Read: CRM Mistakes Guide</a></li>
                 </ul>
